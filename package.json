@@ -1,0 +1,29 @@
+{
+  "name": "todo_app_nodejs_expressjs",
+  "version": "1.0.0",
+  "description": "A basic Todo App Created through Nodejs and Expressjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RRakib/ToDo_App_NodeJs_ExpressJS.git"
+  },
+  "keywords": [
+    "Todo",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "Rakib Uddin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RRakib/ToDo_App_NodeJs_ExpressJS/issues"
+  },
+  "homepage": "https://github.com/RRakib/ToDo_App_NodeJs_ExpressJS#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
