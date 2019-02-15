@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./Style.css" type="text/css" />
-    <!-- <script
+    <script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous">
-    </script> -->
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToDO NodeJs</title>
@@ -15,11 +15,11 @@
 <body>
     <h1> Todo APP </h1>
     <div class="form">
-    <form action="" id="formSubmit" >
+    <form id="formSubmit" method="post">
         <input 
             id = "inputTodo"
             type="text" 
-            name="items"
+            name="item"
             placeholder="Add new item..."
             required
         />
@@ -28,7 +28,7 @@
     <div class="hr"></div>
     <ul>
         <% for(let i = 0; i < todo.length; i++){ %>
-            <li> <%= todo[i].item %> </li>
+            <li><%= todo[i].item %></li>
         <% } %>
     </ul>
 </div>
