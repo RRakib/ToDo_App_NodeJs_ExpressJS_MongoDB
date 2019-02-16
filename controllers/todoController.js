@@ -1,6 +1,28 @@
 let bodyParser = require("body-parser")
 let mongoose = require("mongoose")
 
+
+mongoose.connect("mongodb://localhost:27017/todo");
+
+let todoSchema = new mongoose.Schema({
+    item : String
+});
+
+let Todo = mongoose.model("Todo" , todoSchema);
+let item1 = Todo({
+    item: "Start Coding"
+}).save(function(err){
+    if(err){
+        throw err
+    }
+    else{
+        console.log("Item Saved")
+    }
+})
+
+
+
+
 let data = [
     {item: "Start Coding"},
     {item: "Sleep Some More"},
