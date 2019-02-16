@@ -58,7 +58,9 @@ module.exports = function(app) {
     })
 
     app.delete("/todo/:item" , (req, res) => {
-        data = data.filter((todo) => {return todo.item.replace(/ /g, "-") !== req.params.item})
-        res.json(data)
+        Todo.find({item : req.params.item}).remove((err, data) => {
+            if(err) throw err;
+            res.json(data)
+        })
     })
 }
