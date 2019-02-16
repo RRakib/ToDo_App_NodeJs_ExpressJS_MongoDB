@@ -1,47 +1,60 @@
 let bodyParser = require("body-parser")
 let mongoose = require("mongoose")
 
-
+// Connecting To My Database(MongoDB)
 mongoose.connect("mongodb://localhost:27017/todo");
 
+
+// Creating Schema(Skeliton Of How The Database Will Look)
 let todoSchema = new mongoose.Schema({
     item : String
 });
 
-let Todo = mongoose.model("Todo" , todoSchema);
-let item1 = Todo({
-    item: "Start Coding"
-}).save(function(err){
-    if(err){
-        throw err
-    }
-    else{
-        console.log("Item Saved")
-    }
-})
+// Creating Collection(Model) for The Schema
+let Todo = mongoose.model("TodoCollection" , todoSchema);
+
+// Passing Data To The Collection
+// let item1 = Todo({
+//     item: "Start Coding"
+// }).save(function(err){
+//     if(err){
+//         throw err
+//     }
+//     else{
+//         console.log("Item Saved")
+//     }
+// })
 
 
+// Dummy Data
+// let data = [
+//     {item: "Start Coding"},
+//     {item: "Sleep Some More"},
+//     {item: "Again Start Coding"}
+// ]
 
 
-let data = [
-    {item: "Start Coding"},
-    {item: "Sleep Some More"},
-    {item: "Again Start Coding"}
-]
 let urlencodedParser = bodyParser.urlencoded({ extended : false})
-
 
 
 module.exports = function(app) {
     app.get("/todo" , (req, res) => {
-        res.render("todo", {
-            todo : data
+        Todo.find({}, (err, result) => {
+            if(err){
+                throw err
+            };
+            res.render("todo", {
+                todo : result
+            })
         })
+
     })
     app.post("/todo" ,urlencodedParser,  function(req, res) {
-        console.log(req.body)
-        data.push(req.body);
-        res.json(data)
+        let newTodo = Todo(req.body).save( (err, data) => {
+            if(err) throw err;
+            res.json(data)
+        });
+        
     })
 
     app.delete("/todo/:item" , (req, res) => {
