@@ -1,20 +1,23 @@
 html,body{
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #5ef5ca, #59f3fb);
+    background: url("./Image/1.png") no-repeat;
+    background-position: center;
+    background-size: cover;
     margin: 0;
     padding: 0;
     text-align: center; 
+    overflow: hidden;
 }
 h1{
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0;
-    color: #085f63;
+    color: #7adfda;
 }
 .form{
     width: 60%;
     margin: auto;
-    background: #8ad8dc;
+    background: rgba(10, 42, 115,.4);
     padding: 15px;
     border-radius: 40px 5px 40px;
     box-shadow: 0 5px 15px rgba(0 , 0, 0, .15);
@@ -28,7 +31,7 @@ input{
     border: 2px solid #3a8d91;
     border-radius: 10px 0 0 10px;
     margin: 10px 0;
-    color:  #18494b;
+    color:  #7adfda;
 }
 button{
     background: #7adfda;
@@ -36,7 +39,7 @@ button{
     font-size: 18px;
     padding: 7.3px 25px;
     border-radius: 0 10px 10px 0;
-    color: #18494b;
+    color: #35437e;
     border: #069096 solid 2px;
 }
 ul{
@@ -50,7 +53,7 @@ ul li{
     padding: 5px;
     border-left: 3px solid #069096;
     margin: 0 0 15px 0;
-    color: #18494b;
+    color: #7adfda;
     font-size: 20px;
 }
 ul li:hover{
